@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions xmlns="http://www.netbeans.org/ns/maven-actions/1">
+    <action>
+        <actionName>run</actionName>
+        <goals>
+            <goal>process-classes</goal>
+            <goal>org.openjfx:javafx-maven-plugin:0.0.8:run</goal>
+        </goals>
+    </action>
+</actions>
