@@ -1,14 +1,14 @@
-# Calculador de Promedios — Práctica de Git y Javadoc
+# Calculador de Promedios — Git, Depuración y Javadoc
 
 ## Descripción
 
-Este proyecto corresponde a una actividad práctica de programación en Java.
+En esta actividad trabajaremos sobre un proyecto Java existente denominado **Calculador de Promedios**.
 
-La aplicación **Calculador de Promedios** permite ingresar los datos de un alumno, registrar sus notas, calcular un promedio y consultar un historial.
+El proyecto contiene diferentes problemas que deberán ser identificados y corregidos. Una vez solucionado el funcionamiento de la aplicación, se deberá documentar el código utilizando **Javadoc**.
 
-El proyecto entregado contiene algunos problemas que deberán ser identificados y corregidos.
+Además, utilizaremos el proyecto para practicar un flujo de trabajo colaborativo con **Git y GitHub**.
 
-Una vez que la aplicación funcione correctamente, se deberá documentar el código utilizando **Javadoc**.
+> **Importante:** cada estudiante trabajará sobre su propia copia del repositorio. El repositorio original del docente no debe ser modificado directamente.
 
 ---
 
@@ -16,25 +16,76 @@ Una vez que la aplicación funcione correctamente, se deberá documentar el cód
 
 Durante esta actividad se trabajará con:
 
-* Clonado de repositorios Git.
-* Trabajo con un proyecto Java existente.
-* Análisis y lectura de código.
+* Git y GitHub.
+* Fork de un repositorio.
+* Clonado de repositorios.
+* Trabajo con repositorios remotos.
+* Análisis y lectura de código existente.
 * Identificación y corrección de errores.
 * Pruebas de funcionamiento.
-* Commits descriptivos.
-* Uso de `git status`, `git diff`, `git add` y `git commit`.
-* Sincronización con un repositorio remoto mediante `git push`.
-* Documentación del código mediante Javadoc.
+* Commits.
+* Uso de `git status`, `git diff`, `git add`, `git commit` y `git push`.
+* Documentación mediante Javadoc.
 * Generación de documentación HTML.
+* Pull Requests.
 
 ---
 
-# Parte 1 — Clonar el proyecto
+# Parte 1 — Obtener tu propia copia del proyecto
 
-Desde una terminal, clonar el repositorio:
+El proyecto original se encuentra en:
+
+**Repositorio del docente:**
+https://github.com/cerdanva/calculador-promedios-javadoc
+
+## 1. Crear un Fork
+
+Desde GitHub, ingresar al repositorio y seleccionar:
+
+**Fork → Create fork**
+
+El Fork creará una copia del proyecto dentro de tu propia cuenta de GitHub.
+
+Por ejemplo:
+
+```text
+Repositorio original:
+
+cerdanva/calculador-promedios-javadoc
+
+                 ↓ Fork
+
+Tu repositorio:
+
+TU-USUARIO/calculador-promedios-javadoc
+```
+
+### Importante
+
+No trabajaremos directamente sobre:
+
+```text
+cerdanva/calculador-promedios-javadoc
+```
+
+Trabajarás sobre **tu propio Fork**.
+
+---
+
+# Parte 2 — Clonar tu Fork
+
+Una vez creado el Fork, ingresar a tu repositorio y copiar la URL de clonación.
+
+Desde Git Bash:
 
 ```bash
-git clone https://github.com/cerdanva/calculador-promedios-javadoc.git
+git clone URL-DE-TU-FORK
+```
+
+Por ejemplo:
+
+```bash
+git clone https://github.com/tuusuario/calculador-promedios-javadoc.git
 ```
 
 Ingresar al proyecto:
@@ -43,15 +94,23 @@ Ingresar al proyecto:
 cd calculador-promedios-javadoc
 ```
 
-Comprobar el estado del repositorio:
+Comprobar el estado:
 
 ```bash
 git status
 ```
 
+Verificar el repositorio remoto:
+
+```bash
+git remote -v
+```
+
+Deberá aparecer la URL correspondiente a **tu usuario de GitHub**.
+
 ---
 
-# Parte 2 — Analizar el proyecto
+# Parte 3 — Analizar el proyecto
 
 Antes de modificar el código, explorar la estructura del proyecto.
 
@@ -75,11 +134,9 @@ Responder:
 
 ---
 
-# Parte 3 — Detectar y corregir errores
+# Parte 4 — Detectar y corregir errores
 
 El proyecto contiene diferentes problemas.
-
-### Importante
 
 **No se proporciona una lista de errores.**
 
@@ -97,9 +154,9 @@ Luego analizar el código y realizar las correcciones necesarias.
 
 ---
 
-# Parte 4 — Pruebas
+# Parte 5 — Probar la aplicación
 
-Una vez realizadas las correcciones, comprobar el funcionamiento de la aplicación.
+Una vez realizadas las correcciones, comprobar el funcionamiento.
 
 Realizar como mínimo las siguientes pruebas:
 
@@ -119,17 +176,15 @@ Registrar los resultados de las pruebas.
 
 ---
 
-# Parte 5 — Git
+# Parte 6 — Registrar los cambios con Git
 
-Durante el desarrollo deberán utilizar Git para registrar los cambios.
-
-Después de realizar las primeras correcciones:
+Después de corregir los errores, consultar el estado del repositorio:
 
 ```bash
 git status
 ```
 
-Analizar las modificaciones:
+Revisar qué modificaciones se realizaron:
 
 ```bash
 git diff
@@ -147,19 +202,23 @@ Crear un commit:
 git commit -m "fix: corregir errores del calculador"
 ```
 
-Enviar los cambios al repositorio remoto:
+Enviar los cambios a **tu Fork**:
 
 ```bash
 git push
 ```
 
-Comprobar posteriormente en GitHub que el commit se encuentre disponible.
+> El `push` debe realizarse sobre tu propio repositorio, no sobre el repositorio del docente.
+
+Comprobar en GitHub que el commit aparezca correctamente.
 
 ---
 
-# Parte 6 — Documentación con Javadoc
+# Parte 7 — Documentar con Javadoc
 
 Una vez que el programa funcione correctamente, comenzar la documentación.
+
+Documentar las principales clases y métodos públicos del proyecto.
 
 Utilizar comentarios Javadoc:
 
@@ -169,11 +228,7 @@ Utilizar comentarios Javadoc:
  */
 ```
 
-Documentar las clases principales del proyecto.
-
-También deberán documentarse los métodos públicos relevantes.
-
-Utilizar las etiquetas correspondientes cuando sean necesarias:
+Cuando corresponda, utilizar:
 
 ```text
 @author
@@ -196,11 +251,13 @@ Utilizar las etiquetas correspondientes cuando sean necesarias:
  */
 ```
 
-La documentación debe explicar **qué hace el elemento y cuál es su propósito**, evitando escribir simplemente el nombre del método con otras palabras.
+La documentación debe explicar **qué hace el elemento y cuál es su propósito**.
+
+No se debe limitar a repetir el nombre del método.
 
 ---
 
-# Parte 7 — Generar Javadoc
+# Parte 8 — Generar la documentación Javadoc
 
 Generar la documentación HTML del proyecto.
 
@@ -212,11 +269,11 @@ Comprobar que:
 * Los valores de retorno estén documentados.
 * Las excepciones estén documentadas cuando corresponda.
 
-Explorar la documentación generada y comprobar cómo se presenta la información de las clases y métodos.
+Explorar la documentación generada.
 
 ---
 
-# Parte 8 — Segundo commit
+# Parte 9 — Registrar la documentación con Git
 
 Una vez finalizada la documentación:
 
@@ -236,13 +293,13 @@ Agregar los archivos:
 git add .
 ```
 
-Crear un nuevo commit:
+Crear un segundo commit:
 
 ```bash
 git commit -m "docs: agregar documentacion Javadoc"
 ```
 
-Enviar los cambios:
+Enviar los cambios a tu Fork:
 
 ```bash
 git push
@@ -250,17 +307,109 @@ git push
 
 ---
 
+# Parte 10 — Crear un Pull Request
+
+Una vez finalizado el trabajo, deberás solicitar que tus cambios sean incorporados al repositorio original mediante un **Pull Request (PR)**.
+
+Desde tu repositorio en GitHub seleccionar:
+
+**Contribute → Open pull request**
+
+El Pull Request deberá tener como destino:
+
+```text
+Repositorio base:
+cerdanva/calculador-promedios-javadoc
+
+Rama:
+main
+```
+
+Y como origen:
+
+```text
+Tu repositorio:
+TU-USUARIO/calculador-promedios-javadoc
+
+Rama:
+main
+```
+
+### Título sugerido
+
+```text
+Corrección y documentación - Nombre Apellido
+```
+
+### Descripción
+
+En la descripción del Pull Request indicar brevemente:
+
+* Qué errores encontraste.
+* Qué correcciones realizaste.
+* Qué pruebas realizaste.
+* Qué elementos documentaste mediante Javadoc.
+
+---
+
+# Flujo completo de trabajo
+
+Durante la actividad seguiremos este flujo:
+
+```text
+        REPOSITORIO DEL DOCENTE
+                  │
+                  │ Fork
+                  ↓
+        REPOSITORIO DEL ALUMNO
+                  │
+                  │ git clone
+                  ↓
+              PC LOCAL
+                  │
+                  ├── Analizar
+                  ├── Corregir
+                  ├── Probar
+                  ├── Documentar
+                  │
+                  ↓
+             git commit
+                  │
+                  ↓
+              git push
+                  │
+                  ↓
+        REPOSITORIO DEL ALUMNO
+                  │
+                  │ Pull Request
+                  ↓
+        REPOSITORIO DEL DOCENTE
+```
+
+### Regla fundamental
+
+**No realizar `push` directamente al repositorio del docente.**
+
+Cada estudiante trabaja exclusivamente sobre su propio Fork y utiliza el Pull Request para entregar el trabajo.
+
+---
+
 # Entrega
 
-El repositorio remoto deberá contener:
+La entrega se realizará mediante el Pull Request.
+
+El trabajo deberá contener:
 
 * Proyecto Java corregido.
 * Código documentado mediante Javadoc.
 * Commits que permitan identificar las etapas del trabajo.
-* Documentación generada.
-* Registro de las pruebas realizadas.
+* Pruebas realizadas.
+* Documentación Javadoc generada, cuando corresponda.
+* Pull Request correctamente configurado.
 
-## Reflexión final
+---
+
+# Reflexión final
 
 Responder:
 
@@ -271,21 +420,25 @@ Responder:
 5. ¿Qué información aporta `@param`?
 6. ¿Qué información aporta `@return`?
 7. ¿Cuándo utilizarías `@throws`?
-8. ¿Por qué es importante documentar el código de un proyecto?
+8. ¿Qué diferencia existe entre un repositorio y un Fork?
+9. ¿Qué función cumple un Pull Request?
+10. ¿Por qué es conveniente utilizar Git en un proyecto de desarrollo de software?
 
 ---
 
-## Criterios de evaluación
+# Criterios de evaluación
 
 Se tendrá en cuenta:
 
-* Correcta clonación y configuración del proyecto.
-* Capacidad para identificar errores.
+* Creación correcta del Fork.
+* Clonado correcto del repositorio.
+* Uso adecuado de Git.
+* Identificación de los errores.
 * Corrección de los problemas encontrados.
 * Funcionamiento de la aplicación.
-* Calidad de las pruebas realizadas.
-* Uso correcto de Git.
-* Calidad de los mensajes de commit.
+* Calidad de las pruebas.
+* Calidad y claridad de los commits.
 * Uso correcto de Javadoc.
-* Claridad de la documentación.
-* Capacidad para explicar las decisiones tomadas.
+* Calidad de la documentación.
+* Correcta creación del Pull Request.
+* Capacidad para explicar el trabajo realizado.
