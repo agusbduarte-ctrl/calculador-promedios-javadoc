@@ -18,7 +18,7 @@ public class PromedioService {
         double n2 = Double.parseDouble(nota2);
         double n3 = Double.parseDouble(nota3);
 
-        double promedio = (n1 + n2 + n3) / 2;
+        double promedio = (n1 + n2 + n3) / 3;
 
         String estado = clasificar(promedio);
 
@@ -39,7 +39,7 @@ public class PromedioService {
         }
         try {
             double valor = Double.parseDouble(nota);
-            if (valor < 0 && valor > 10) {
+            if (valor < 0 || valor > 10) {
                 throw new IllegalArgumentException("Las notas deben estar entre 0 y 10.");
             }
         } catch (NumberFormatException e) {
@@ -48,7 +48,7 @@ public class PromedioService {
     }
 
     private String clasificar(double promedio) {
-        if (promedio >= 4) {
+        if (promedio >= 6) {
             return "Aprobado";
         } else {
             return "Desaprobado";

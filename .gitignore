@@ -1,0 +1,29 @@
+# Build output (Maven)
+target/
+build/
+*.jar
+*.war
+
+# Backups
+*.BACKUP
+*.backup
+*.bak
+
+# IDE (NetBeans, IntelliJ, VSCode, Eclipse)
+.nbproject/
+nbproject/
+nbactions.xml
+nb-configuration.xml
+.idea/
+*.iml
+.vscode/
+.classpath
+.project
+.settings/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

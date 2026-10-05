@@ -60,10 +60,13 @@ public class PrimaryController {
 
     @FXML
     private void limpiarHistorial() {
-        // Completar
-    }
+    promedioService.limpiarHistorial();
+    actualizarHistorial();
+    lblResultado.setText("Historial borrado");
+}
 
     private void actualizarHistorial() {
-       //// Completar1
-    }
+    listaHistorial.getItems().clear();
+    listaHistorial.getItems().addAll(promedioService.listarHistorial());
+}
 }

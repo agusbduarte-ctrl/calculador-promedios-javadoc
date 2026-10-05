@@ -1,0 +1,66 @@
+[1mdiff --git a/src/main/java/com/ejemplo/promedio/controller/PrimaryController.java b/src/main/java/com/ejemplo/promedio/controller/PrimaryController.java[m
+[1mindex 715b8a2..81b13d2 100644[m
+[1m--- a/src/main/java/com/ejemplo/promedio/controller/PrimaryController.java[m
+[1m+++ b/src/main/java/com/ejemplo/promedio/controller/PrimaryController.java[m
+[36m@@ -60,10 +60,13 @@[m [mpublic class PrimaryController {[m
+ [m
+     @FXML[m
+     private void limpiarHistorial() {[m
+[31m-        // Completar[m
+[31m-    }[m
+[32m+[m[32m    promedioService.limpiarHistorial();[m
+[32m+[m[32m    actualizarHistorial();[m
+[32m+[m[32m    lblResultado.setText("Historial borrado");[m
+[32m+[m[32m}[m
+ [m
+     private void actualizarHistorial() {[m
+[31m-       //// Completar1[m
+[31m-    }[m
+[32m+[m[32m    listaHistorial.getItems().clear();[m
+[32m+[m[32m    listaHistorial.getItems().addAll(promedioService.listarHistorial());[m
+[32m+[m[32m}[m
+ }[m
+[1mdiff --git a/src/main/java/com/ejemplo/promedio/service/PromedioService.java b/src/main/java/com/ejemplo/promedio/service/PromedioService.java[m
+[1mindex 3a1e12f..1ace61b 100644[m
+[1m--- a/src/main/java/com/ejemplo/promedio/service/PromedioService.java[m
+[1m+++ b/src/main/java/com/ejemplo/promedio/service/PromedioService.java[m
+[36m@@ -18,7 +18,7 @@[m [mpublic class PromedioService {[m
+         double n2 = Double.parseDouble(nota2);[m
+         double n3 = Double.parseDouble(nota3);[m
+ [m
+[31m-        double promedio = (n1 + n2 + n3) / 2;[m
+[32m+[m[32m        double promedio = (n1 + n2 + n3) / 3;[m
+ [m
+         String estado = clasificar(promedio);[m
+ [m
+[36m@@ -39,7 +39,7 @@[m [mpublic class PromedioService {[m
+         }[m
+         try {[m
+             double valor = Double.parseDouble(nota);[m
+[31m-            if (valor < 0 && valor > 10) {[m
+[32m+[m[32m            if (valor < 0 || valor > 10) {[m
+                 throw new IllegalArgumentException("Las notas deben estar entre 0 y 10.");[m
+             }[m
+         } catch (NumberFormatException e) {[m
+[36m@@ -48,7 +48,7 @@[m [mpublic class PromedioService {[m
+     }[m
+ [m
+     private String clasificar(double promedio) {[m
+[31m-        if (promedio >= 4) {[m
+[32m+[m[32m        if (promedio >= 6) {[m
+             return "Aprobado";[m
+         } else {[m
+             return "Desaprobado";[m
+[1mdiff --git a/src/main/resources/com/ejemplo/promedios/primary.fxml b/src/main/resources/com/ejemplo/promedios/primary.fxml[m
+[1mindex cb6297b..791ce35 100644[m
+[1m--- a/src/main/resources/com/ejemplo/promedios/primary.fxml[m
+[1m+++ b/src/main/resources/com/ejemplo/promedios/primary.fxml[m
+[36m@@ -16,7 +16,7 @@[m
+ [m
+     <Label styleClass="titulo" text="Calculador de Promedios" />[m
+     <TextField fx:id="txtNombre" promptText="Nombre del alumno" />[m
+[31m-    <TextField fx:id="txtNota_1" promptText="Nota 1 (0 a 10)" />[m
+[32m+[m[32m    <TextField fx:id="txtNota1" promptText="Nota 1 (0 a 10)" />[m
+     <TextField fx:id="txtNota2" promptText="Nota 2 (0 a 10)" />[m
+     <TextField fx:id="txtNota3" promptText="Nota 3 (0 a 10)" />[m
+ [m

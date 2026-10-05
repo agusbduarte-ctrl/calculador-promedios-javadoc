@@ -16,7 +16,7 @@
 
     <Label styleClass="titulo" text="Calculador de Promedios" />
     <TextField fx:id="txtNombre" promptText="Nombre del alumno" />
-    <TextField fx:id="txtNota_1" promptText="Nota 1 (0 a 10)" />
+    <TextField fx:id="txtNota1" promptText="Nota 1 (0 a 10)" />
     <TextField fx:id="txtNota2" promptText="Nota 2 (0 a 10)" />
     <TextField fx:id="txtNota3" promptText="Nota 3 (0 a 10)" />
 
